@@ -12,3 +12,12 @@
 #page-header {
     font-size: 35px;
 }
+.lowUV {
+    background-color: green;
+}
+.moderateUV {
+    background-color: orange;
+}
+.extremeUV {
+    background-color: red;
+}
