@@ -75,9 +75,9 @@ function getWeather(userCity) {
       console.log(responseUV);
       var UVindex = responseUV.value;
       var uvIndexEl = $("<div>").text("UV Index: " + UVindex);
-      if (UVindex <= 2) {
+      if (UVindex <= 2.99) {
         uvIndexEl.addClass("lowUV");
-      } else if (UVindex >= 3 && UVindex <= 7){
+      } else if (UVindex >= 3.99 && UVindex <= 7.99){
         uvIndexEl.addClass("moderateUV");
       } else if (UVindex >= 8) {
         uvIndexEl.addClass("extremeUV");
