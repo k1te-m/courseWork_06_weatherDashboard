@@ -12,22 +12,33 @@ $.ajax({
     console.log(response);
 
     //variables for current forecast ajax call
-    var currentDateEl = moment().format("MMMM Do YYYY");
-    var cityNameEl = response.name;
+    var cardEl = $("<div>").addClass("card").attr("style", "width: 100%");
+    var cardBodyEl = $("<div>").addClass("card-body");
+    var currentDateEl = $("<div>").text(moment().format("MMMM Do YYYY"));
+    currentDateEl.addClass("card-title text-muted");
+    var cityNameEl = $("<div>").text(response.name);
+    cityNameEl.addClass("card-subtitle mb-2");
     var weatherIcon = response.weather[0].icon;
     var weatherIconURL = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
     var weatherIconEl = $("<img>").attr("src", weatherIconURL);
-    var currentTemp = Math.floor((response.main.temp - 273.15) * 1.80 + 32);
-    var currentHum = response.main.humidity;
-    var currentWindS = Math.floor((response.wind.speed * 2.23694));
+    var currentTemp = $("<div>").text("Temperature: " + Math.floor((response.main.temp - 273.15) * 1.80 + 32) + "°");
+    currentTemp.addClass("card-text");
+    var currentHumEl = $("<div>").text("Humidity: " + response.main.humidity + "%");
+    currentHumEl.addClass("card-text");
+    var currentWindSEl = $("<div>").text("Wind Speed: " + Math.floor((response.wind.speed * 2.23694)) + "mph");
+    currentWindSEl.addClass("card-text");
+
+    var currentWeatherCard = cardEl.append(cardBodyEl.prepend(currentDateEl, cityNameEl.append(weatherIconEl), currentTemp, currentHumEl, currentWindSEl));
+
 
     //rendering of current forecast card
-    $("#city-display").text(cityNameEl);
-    $("#city-display").append(weatherIconEl);
-    $("#date-display").text(currentDateEl);
-    $("#temp-display").text("Temperature: " + currentTemp + "°");
-    $("#humid-display").text("Humidity: " + currentHum + "%");
-    $("#wind-speed-display").text("Wind Speed: " + currentWindS + " mph");
+    $("#weather").append(currentWeatherCard);
+    // $("#city-display").text(cityNameEl);
+    // $("#city-display").append(weatherIconEl);
+    // $("#date-display").text(currentDateEl);
+    // $("#temp-display").text("Temperature: " + currentTemp + "°");
+    // $("#humid-display").text("Humidity: " + currentHum + "%");
+    // $("#wind-speed-display").text("Wind Speed: " + currentWindS + " mph");
 
     //variables for UV Index ajax call
     var cityLon = response.coord.lon;
