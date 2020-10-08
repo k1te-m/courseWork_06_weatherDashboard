@@ -73,7 +73,16 @@ function getWeather(userCity) {
       method: "GET",
     }).then(function (responseUV) {
       console.log(responseUV);
-      var uvIndexEl = $("<div>").text("UV Index: " + responseUV.value);
+      var UVindex = responseUV.value;
+      var uvIndexEl = $("<div>").text("UV Index: " + UVindex);
+      if (UVindex <= 2) {
+        uvIndexEl.addClass("lowUV");
+      } else if (UVindex >= 3 && UVindex <= 7){
+        uvIndexEl.addClass("moderateUV");
+      } else if (UVindex >= 8) {
+        uvIndexEl.addClass("extremeUV");
+      }
+
       uvIndexEl.addClass("card-text");
       currentWindSEl.append(uvIndexEl);
     });
