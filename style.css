@@ -9,3 +9,6 @@
 .hidden {
     visibility: hidden;
 }
+#page-header {
+    font-size: 35px;
+}

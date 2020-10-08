@@ -32,7 +32,7 @@ $.ajax({
     //variables for UV Index ajax call
     var cityLon = response.coord.lon;
     var cityLat = response.coord.lat;
-    var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?lat=" + cityLat + "&lon=" + cityLat + "&appid=" + APIKey;
+    var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?lat=" + cityLat + "&lon=" + cityLon + "&appid=" + APIKey;
 
     $.ajax({
         url:queryURL2,
