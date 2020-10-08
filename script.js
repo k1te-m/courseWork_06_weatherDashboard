@@ -42,6 +42,17 @@ $.ajax({
         var uvIndex = response2.value;
         $("#uv-display").text("UV Index: " + uvIndex)
     })
+
+    //variables for 5 day weather ajax call
+    var queryURL3 = "https://api.openweathermap.org/data/2.5/onecall?lat="+ cityLat + "&lon=" + cityLon + "&exclude=current,minutely,hourly,alerts&appid=" + APIKey;
+
+    $.ajax({
+        url: queryURL3,
+        method: "GET"
+    }).then(function(response3){
+        console.log(response3);
+    })
+     
     
    
     
@@ -60,11 +71,14 @@ $.ajax({
 
 
 
+
 $("#submit-button").on("click", function(event) {
-    $("#current-forecast").attr("style", "display: block;")
     event.preventDefault();
+    $("#current-forecast").attr("style", "display: block;");
+    $("#five-day").attr("style", "display: inline-block;");
     console.log("working");
     
     getWeather();
+    
 });
 
