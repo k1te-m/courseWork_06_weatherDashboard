@@ -1,0 +1,11 @@
+#city-list {
+    list-style-type: none;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
