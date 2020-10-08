@@ -16,7 +16,7 @@ function getWeather(userCity) {
   }).then(function (responseW) {
     console.log(responseW);
 
-    //variables for current forecast ajax call
+    //variables for current forecast ajax call to build card
     var cardEl = $("<div>").addClass("card").attr("style", "width: 35%");
     cardEl.attr("id", "currentday-weather");
     var cardBodyEl = $("<div>").addClass("card-body");
