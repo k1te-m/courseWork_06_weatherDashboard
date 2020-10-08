@@ -13,6 +13,7 @@ $.ajax({
 
     //variables for current forecast ajax call
     var cardEl = $("<div>").addClass("card").attr("style", "width: 100%");
+    cardEl.attr("id", "currentday-weather");
     var cardBodyEl = $("<div>").addClass("card-body");
     var currentDateEl = $("<div>").text(moment().format("MMMM Do YYYY"));
     currentDateEl.addClass("card-title text-muted");
