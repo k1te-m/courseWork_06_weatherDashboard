@@ -33,12 +33,7 @@ $.ajax({
 
     //rendering of current forecast card
     $("#weather").append(currentWeatherCard);
-    // $("#city-display").text(cityNameEl);
-    // $("#city-display").append(weatherIconEl);
-    // $("#date-display").text(currentDateEl);
-    // $("#temp-display").text("Temperature: " + currentTemp + "°");
-    // $("#humid-display").text("Humidity: " + currentHum + "%");
-    // $("#wind-speed-display").text("Wind Speed: " + currentWindS + " mph");
+    
 
     //variables for UV Index ajax call
     var cityLon = response.coord.lon;
@@ -50,8 +45,9 @@ $.ajax({
         method: "GET"
     }).then(function(response2) {
         console.log(response2);
-        var uvIndex = response2.value;
-        $("#uv-display").text("UV Index: " + uvIndex)
+        var uvIndexEl = $("<div>").text("UV Index: " + response2.value);
+        uvIndexEl.addClass("card-text");
+        currentWindSEl.append(uvIndexEl);
     })
 
     //variables for 5 day weather ajax call
