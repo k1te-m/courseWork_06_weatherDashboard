@@ -21,15 +21,23 @@
 .extremeUV {
     background-color: purple;
 }
-#bgvid {
+video {
     object-fit: cover;
-    height: 350px;
-    width: 100%;
-    z-index: 1;
-    
-}
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 .text-white {
     color: white;
     z-index: 2;
 }
 
+label {
+    color: white;
+}
+
+.card {
+    background-color: gainsboro;
+}
