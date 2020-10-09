@@ -120,7 +120,9 @@ function getWeather(userCity) {
                           var forecastHumEl = $("<div>").text("Humidity: " + forecastHum + "%")
                           forecastHumEl.addClass("card-text");
 
-                          var forecastCard = forecastCardEl.append(forecastCardBodyEl.prepend(forecastDateEl, forecastTempEl.append(forecastIconEl), forecastHumEl));
+                          var colEl = $("<div>").addClass("col");
+
+                          var forecastCard = colEl.append(forecastCardEl.append(forecastCardBodyEl.prepend(forecastDateEl, forecastTempEl.append(forecastIconEl), forecastHumEl)));
 
                           $("#forecast").append(forecastCard);
 
