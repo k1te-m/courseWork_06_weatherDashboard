@@ -26,7 +26,7 @@ function getWeather(userCity) {
     cityNameEl.addClass("card-subtitle mb-2");
     var weatherIcon = responseW.weather[0].icon;
     var weatherIconURL =
-      "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+      "https://openweathermap.org/img/w/" + weatherIcon + ".png";
     var weatherIconEl = $("<img>").attr("src", weatherIconURL);
     var currentTemp = $("<div>").text(
       "Temperature: " +
@@ -102,7 +102,7 @@ function getWeather(userCity) {
                           var dateString = moment.unix(dateUnix).format("MMMM Do YYYY");
                         
                           var forecastIcon = responseF.daily[i].weather[0].icon;
-                          var forecastIconURL = "http://openweathermap.org/img/w/" + forecastIcon + ".png";
+                          var forecastIconURL = "https://openweathermap.org/img/w/" + forecastIcon + ".png";
                           var forecastIconEl = $("<img>").attr("src", forecastIconURL);
                           
                           var forecastTemp = Math.floor((responseF.daily[i].temp.max - 273.15) * 1.8 +32);
