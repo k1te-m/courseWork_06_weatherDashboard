@@ -99,7 +99,7 @@ function getWeather(userCity) {
 
                         for (i = 1; i <= 5; i++) {
                           var dateUnix = responseF.daily[i].dt;
-                          var dateString = moment.unix(dateUnix).format("MMMM Do YYYY")
+                          var dateString = moment.unix(dateUnix).format("MMMM Do YYYY");
                           
                           var forecastIcon = responseF.daily[i].weather[0].icon;
                           var forecastIconURL = "http://openweathermap.org/img/w/" + forecastIcon + ".png";
