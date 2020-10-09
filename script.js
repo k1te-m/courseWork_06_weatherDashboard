@@ -72,7 +72,6 @@ function getWeather(userCity) {
       url: queryURLUV,
       method: "GET",
     }).then(function (responseUV) {
-      console.log(responseUV);
       var UVindex = responseUV.value;
       var uvIndexEl = $("<div>").text("UV Index: " + UVindex);
       if (UVindex <= 2.99) {
@@ -97,6 +96,21 @@ function getWeather(userCity) {
                         var dateUnix = responseF.daily[1].dt;
                         var dateString = moment.unix(dateUnix).format("MM/DD/YYYY");
                         console.log(dateString);
+
+                        for (i = 1; i <= 5; i++) {
+                          var dateUnix = responseF.daily[i].dt;
+                          var dateString = moment.unix(dateUnix).format("MMMM Do YYYY")
+                          
+                          var forecastIcon = responseF.daily[i].weather[0].icon;
+                          var forecastIconURL = "http://openweathermap.org/img/w/" + forecastIcon + ".png";
+                          
+                          var forecastWeather = Math.floor((responseF.daily[i].temp.max - 273.15) * 1.8 +32);
+
+                          var forecastHum = responseF.daily[i].humidity;
+                          
+                          
+
+                        }
                     });
         }
         getForecast(userCity);
