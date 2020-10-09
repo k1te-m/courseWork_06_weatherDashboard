@@ -100,15 +100,29 @@ function getWeather(userCity) {
                         for (i = 1; i <= 5; i++) {
                           var dateUnix = responseF.daily[i].dt;
                           var dateString = moment.unix(dateUnix).format("MMMM Do YYYY");
-                          
+                        
                           var forecastIcon = responseF.daily[i].weather[0].icon;
                           var forecastIconURL = "http://openweathermap.org/img/w/" + forecastIcon + ".png";
+                          var forecastIconEl = $("<img>").attr("src", forecastIconURL);
                           
-                          var forecastWeather = Math.floor((responseF.daily[i].temp.max - 273.15) * 1.8 +32);
+                          var forecastTemp = Math.floor((responseF.daily[i].temp.max - 273.15) * 1.8 +32);
+                      
 
                           var forecastHum = responseF.daily[i].humidity;
                           
-                          
+                          var forecastCardEl = $("<div>").addClass("card").attr("style", "width: 100%");
+                          forecastCardEl.attr("date-index", "day-" + i);
+                          var forecastCardBodyEl = $("<div>").addClass("card-body");
+                          var forecastDateEl = $("<div>").text(dateString);
+                          forecastDateEl.addClass("card-title text-muted");
+                          var forecastTempEl = $("<div>").text("Temperature: " + forecastTemp + "°");
+                          forecastTempEl.addClass("card-text");
+                          var forecastHumEl = $("<div>").text("Humidity: " + forecastHum + "%")
+                          forecastHumEl.addClass("card-text");
+
+                          var forecastCard = forecastCardEl.append(forecastCardBodyEl.prepend(forecastDateEl, forecastTempEl.append(forecastIconEl), forecastHumEl));
+
+                          $("#forecast").append(forecastCard);
 
                         }
                     });
