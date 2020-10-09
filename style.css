@@ -21,3 +21,15 @@
 .extremeUV {
     background-color: purple;
 }
+#bgvid {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+    z-index: 1;
+    
+}
+.text-white {
+    color: white;
+    z-index: 2;
+}
+
