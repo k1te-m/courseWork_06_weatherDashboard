@@ -76,7 +76,7 @@ function getWeather(userCity) {
       var uvIndexEl = $("<div>").text("UV Index: " + UVindex);
       if (UVindex <= 2.99) {
         uvIndexEl.addClass("lowUV");
-      } else if (UVindex >= 3.99 && UVindex <= 7.99){
+      } else if (UVindex >= 3.00 && UVindex <= 7.99){
         uvIndexEl.addClass("moderateUV");
       } else if (UVindex >= 8) {
         uvIndexEl.addClass("extremeUV");
@@ -112,7 +112,7 @@ function getWeather(userCity) {
                           
                           var forecastCardEl = $("<div>").addClass("card").attr("style", "width: 100%");
                           forecastCardEl.attr("date-index", "day-" + i);
-                          var forecastCardBodyEl = $("<div>").addClass("card-body");
+                          var forecastCardBodyEl = $("<div>").addClass("card-body forecast-card");
                           var forecastDateEl = $("<div>").text(dateString);
                           forecastDateEl.addClass("card-title text-muted");
                           var forecastTempEl = $("<div>").text("Temperature: " + forecastTemp + "°");
