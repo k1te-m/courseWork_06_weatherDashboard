@@ -144,7 +144,7 @@ function getWeather(userCity) {
               forecastCardEl.append(
                 forecastCardBodyEl.prepend(
                   forecastDateEl,
-                  forecastTempEl.append(forecastIconEl),
+                  forecastTempEl.prepend(forecastIconEl, $("<br>")),
                   forecastHumEl
                 )
               )
