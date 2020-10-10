@@ -176,7 +176,11 @@ $("#submit-button").on("click", function (event) { //on click event for the sear
   $("#five-day").attr("style", "display: inline-block;");
   var userCity = $("#user-city").val();
   getWeather(userCity);
+  if (userCity !== "") {
   cityHistory.push(userCity);
+  } else {
+    alert("Please enter a city.");
+  }
   renderCityHistory();
   localStorage.setItem("fetch", JSON.stringify(cityHistory));
 });
