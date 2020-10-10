@@ -1,11 +1,11 @@
 //function to retrieve current weather forecast
-var userCity = $("#user-city").val();
+// var userCity = $("#user-city").val();
 var APIKey = "96f3dfbfcb0c17c6b7abf0c008b21dd6";
 let cityHistory = JSON.parse(localStorage.getItem("fetch")) || [];
 console.log(cityHistory);
 
 function getWeather(userCity) {
-  var userCity = $("#user-city").val();
+  
   var queryURLWeather =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     userCity +
@@ -139,6 +139,18 @@ function getWeather(userCity) {
   
 }
 
+function renderCityHistory() {
+  $("#city-list").html("");
+  for (let i = 0; i < cityHistory.length; i++) {
+    var cityEl = $("<li>").addClass("list-group-item d-block bg-white");
+    cityEl.text(cityHistory[i]);
+    
+    
+    $("#city-list").append(cityEl);
+  }
+  
+}
+
 // function getForecast(userCity) {
 //     var
 
@@ -166,6 +178,13 @@ $("#submit-button").on("click", function (event) {
   var userCity = $("#user-city").val();
   getWeather(userCity);
   cityHistory.push(userCity);
+  renderCityHistory();
   localStorage.setItem("fetch", JSON.stringify(cityHistory));
 //   getForecast(userCity);
 });
+
+
+
+
+renderCityHistory();
+
