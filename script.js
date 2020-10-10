@@ -186,3 +186,6 @@ $("#submit-button").on("click", function (event) { //on click event for the sear
 });
 
 renderCityHistory(); //ensures history is rendered on load
+if (cityHistory.length > 0) {
+  getWeather(cityHistory[cityHistory.length - 1]);
+}
