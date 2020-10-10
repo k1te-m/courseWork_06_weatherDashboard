@@ -78,7 +78,6 @@ nav {
   font-weight: bold;
   color: black;
   text-align: center;
-  padding-left: 5px;
 }
 input {
   background-color: white;
@@ -90,7 +89,8 @@ input {
   font-size: 20px;
   margin-bottom: 5px;
   color: black;
-  padding-left: 4px;
+  text-align: center;
+  
 }
 #search {
   border-right: 1px solid #2a9d8f;
