@@ -23,7 +23,7 @@ function getWeather(userCity) {
     cardEl.attr("id", "currentday-weather");
     var cardBodyEl = $("<div>").addClass("card-body");
     var currentDateEl = $("<div>").text(moment().format("MMMM Do YYYY"));
-    currentDateEl.addClass("card-title text-muted");
+    currentDateEl.addClass("card-title");
     var cityNameEl = $("<div>").text(responseW.name);
     cityNameEl.addClass("card-subtitle mb-2");
     var weatherIcon = responseW.weather[0].icon;
@@ -128,7 +128,7 @@ function getWeather(userCity) {
               "card-body forecast-card"
             );
             var forecastDateEl = $("<div>").text(dateString);
-            forecastDateEl.addClass("card-title text-muted");
+            forecastDateEl.addClass("card-title");
             var forecastTempEl = $("<div>").text(
               "Temperature: " + forecastTemp + "°"
             );
@@ -164,7 +164,7 @@ function getWeather(userCity) {
 function renderCityHistory() {
   $("#city-list").html("");
   for (let i = 0; i < cityHistory.length; i++) {
-    var cityEl = $("<li>").addClass("list-group-item d-block bg-white");
+    var cityEl = $("<li>").addClass("list-group-item d-block");
     cityEl.text(cityHistory[i]);
 
     $("#city-list").append(cityEl);
