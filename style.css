@@ -83,6 +83,7 @@ input {
   background-color: white;
   font-size: 20px;
   width: 100%;
+  text-align: center;
 }
 #submit-button {
   background-color: #e76f51;
