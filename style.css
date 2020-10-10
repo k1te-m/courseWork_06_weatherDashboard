@@ -1,3 +1,4 @@
+
 #city-list {
     list-style-type: none;
 }
@@ -38,6 +39,37 @@ label {
     color: white;
 }
 
+#currentday-weather {
+    background-color: #637074;
+}
+
 .card {
-    background-color: gainsboro;
+    background-color: #8693AB;
+    color: black;
+}
+nav {
+    background-color: #212227;
+    border-bottom: 5px solid #637074;
+}
+.card-title {
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.list-group-item{
+    background-color: #BDD4E7;
+}
+input {
+    background-color: #BDD4E7;
+}
+#submit-button {
+    background-color: #212227;
+}
+#search {
+    border-right: 1px solid #637074;
+    
 }
