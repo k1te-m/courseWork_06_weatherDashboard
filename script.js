@@ -1,6 +1,8 @@
 //function to retrieve current weather forecast
 var userCity = $("#user-city").val();
 var APIKey = "96f3dfbfcb0c17c6b7abf0c008b21dd6";
+let cityHistory = JSON.parse(localStorage.getItem("fetch")) || [];
+console.log(cityHistory);
 
 function getWeather(userCity) {
   var userCity = $("#user-city").val();
@@ -161,7 +163,9 @@ $("#submit-button").on("click", function (event) {
   $("#current-forecast").attr("style", "display: block;");
   $("#five-day").attr("style", "display: inline-block;");
   console.log("working");
-
+  var userCity = $("#user-city").val();
   getWeather(userCity);
+  cityHistory.push(userCity);
+  localStorage.setItem("fetch", JSON.stringify(cityHistory));
 //   getForecast(userCity);
 });
