@@ -19,7 +19,7 @@ function getWeather(userCity) {
     console.log(responseW);
 
     //variables for current forecast ajax call to build card
-    var cardEl = $("<div>").addClass("card").attr("style", "width: 35%");
+    var cardEl = $("<div>").addClass("card").attr("style", "width: 45%");
     cardEl.attr("id", "currentday-weather");
     var cardBodyEl = $("<div>").addClass("card-body");
     var currentDateEl = $("<div>").text(moment().format("MMMM Do YYYY"));
