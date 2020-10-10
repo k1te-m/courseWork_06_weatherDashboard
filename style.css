@@ -31,25 +31,30 @@ video {
     left: 0;
   }
 .text-white {
-    color: white;
-    z-index: 2;
+    color: #264653;
+    
 }
 
 label {
-    color: white;
+    color: #E9C46A;
+    font-size: 25px;
 }
 
 #currentday-weather {
-    background-color: #637074;
+    background-color: #E9C46A;
 }
 
 .card {
-    background-color: #8693AB;
+    background-color: #E76F51;
     color: black;
+    font-size: 20px;
 }
 nav {
-    background-color: #212227;
-    border-bottom: 5px solid #637074;
+    background-color: #264653;
+    border-bottom: 5px solid #2A9D8F;
+}
+#page-header {
+    color: black;
 }
 .card-title {
     font-weight: bold;
@@ -61,13 +66,21 @@ nav {
 }
 
 .list-group-item{
-    background-color: #BDD4E7;
+    background-color: #F4A261;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
 }
 input {
-    background-color: #BDD4E7;
+    background-color: white;
+    font-size: 20px;
 }
 #submit-button {
-    background-color: #212227;
+    background-color: #E76F51;
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: black;
 }
 #search {
     border-right: 1px solid #637074;
