@@ -13,3 +13,6 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
+
+# Future Development
+I would like to implement a more robust five day forecast that captures more information for the user. In addtion, I would like to add some verification features for the user input along with some different stylings. Use of a paid API would also allow for further feature implementation such as radars and other common ammenities found on popular weather websites/applications.
