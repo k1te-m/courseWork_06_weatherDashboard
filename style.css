@@ -42,12 +42,15 @@ label {
 
 #currentday-weather {
   background-color: #e9c46a;
+  font-weight: 300;
 }
 
 .card {
   background-color: #e76f51;
   color: black;
   font-size: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 nav {
   background-color: #264653;
@@ -76,7 +79,7 @@ nav {
 input {
   background-color: white;
   font-size: 20px;
-  width: 100px;
+  width: 100%;
 }
 #submit-button {
   background-color: #e76f51;
@@ -86,24 +89,70 @@ input {
   padding-left: 4px;
 }
 #search {
-  border-right: 1px solid #637074;
+  border-right: 1px solid #2a9d8f;
 }
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
-
+    input {
+        width: 100%;
+    }
+    #currentday-weather {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .card {
+        font-size: 13.5px;
+        text-align: center;
+        font-weight: bold;
+    }
   }
   
   /* Medium devices (tablets, 768px and up) */
   @media screen and (min-width: 768px) {
-    
+    input {
+        width: 100%;
+    }
+    #currentday-weather {
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .card {
+        font-size: 11.2px;
+        text-align: center;
+        font-weight: bold;
+    }
   }
   
   /* Large devices (desktops, 992px and up) */
   @media screen and (min-width: 992px) {
+    input {
+        width: 100%;
+    }
+    #currentday-weather {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .card {
+        font-size: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
    
   }
   
   /* Extra large devices (large desktops, 1200px and up) */
   @media screen and (min-width: 1200px) {
+    input {
+        width: 100%;
+    }
+    #currentday-weather {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .card {
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
    
   }
