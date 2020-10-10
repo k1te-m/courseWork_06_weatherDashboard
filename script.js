@@ -5,7 +5,8 @@ let cityHistory = JSON.parse(localStorage.getItem("fetch")) || [];
 console.log(cityHistory);
 
 function getWeather(userCity) {
-  
+  $("#weather").empty();
+  $("#forecast").empty();
   var queryURLWeather =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     userCity +
@@ -176,7 +177,6 @@ $("#submit-button").on("click", function (event) {
   event.preventDefault();
   $("#current-forecast").attr("style", "display: block;");
   $("#five-day").attr("style", "display: inline-block;");
-  
   console.log("working");
   var userCity = $("#user-city").val();
   getWeather(userCity);
