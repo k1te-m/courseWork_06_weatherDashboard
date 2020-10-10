@@ -6,3 +6,10 @@ This application allows the user to enter in a city of their choice and receive 
 The app is available for use on at the below GitHub Page link.
 
 [GitHub-Page](https://k1te-m.github.io/courseWork_06_weatherDashboard/)
+
+# User Story
+```
+AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly
+```
