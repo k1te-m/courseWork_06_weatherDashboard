@@ -1,5 +1,7 @@
 # courseWork_06_weatherDashboard
 
+![demo-image](./Assets/demo.PNG)
+
 # Description
 This application allows the user to enter in a city of their choice and receive current weather information along with an abbreviated five day forecast. The application utilizes the OpenWeatherMap Current Weather Data API to pull this information and dynamically creates the display via JQuery. User inputs are stored locally and displayed for future use. 
 
