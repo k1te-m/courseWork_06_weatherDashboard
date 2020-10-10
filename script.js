@@ -145,10 +145,12 @@ function renderCityHistory() {
     var cityEl = $("<li>").addClass("list-group-item d-block bg-white");
     cityEl.text(cityHistory[i]);
     
-    
     $("#city-list").append(cityEl);
   }
-  
+  $("li").on("click", function() {
+    console.log($(this).text());
+    getWeather($(this).text());
+  })
 }
 
 // function getForecast(userCity) {
@@ -174,6 +176,7 @@ $("#submit-button").on("click", function (event) {
   event.preventDefault();
   $("#current-forecast").attr("style", "display: block;");
   $("#five-day").attr("style", "display: inline-block;");
+  
   console.log("working");
   var userCity = $("#user-city").val();
   getWeather(userCity);
@@ -182,6 +185,8 @@ $("#submit-button").on("click", function (event) {
   localStorage.setItem("fetch", JSON.stringify(cityHistory));
 //   getForecast(userCity);
 });
+
+
 
 
 
